@@ -17,21 +17,23 @@ let faces = [
     { nome: "gekko", img: "img/gekko.png" },
     { nome: "harbor", img: "img/harbor.png" },
     { nome: "iso", img: "img/iso.png" },
-    { nome: "jett", img: "img/jett.png" },
+    { nome: "jett", img: "img/jett.png" }, // Carta rara
     { nome: "kayo", img: "img/kayo.png" },
     { nome: "killjoy", img: "img/killjoy.png" },
     { nome: "neon", img: "img/neon.png" },
     { nome: "omen", img: "img/omen.png" },
-    { nome: "phoenix", img: "img/phoenix.png" },
+    { nome: "phoenix", img: "img/phoenix.png" }, // Carta rara
     { nome: "raze", img: "img/raze.png" },
-    { nome: "reyna", img: "img/reyna.png" },
+    { nome: "reyna", img: "img/reyna.png" }, // Carta rara
     { nome: "sage", img: "img/sage.png" },
     { nome: "skye", img: "img/skye.png" },
     { nome: "sova", img: "img/sova.png" },
     { nome: "viper", img: "img/viper.png" },
     { nome: "vyse", img: "img/vyse.png" },
     { nome: "yoru", img: "img/yoru.png" },
-]
+];
+
+let raras = ["jett", "phoenix", "reyna"]; // Personagens raros
 
 function sortear() {
     // Lógica principal do sorteio da carta.
@@ -40,9 +42,21 @@ function sortear() {
 
     // Renderizar a imagem da carta.
     let cc = document.getElementById('centro');
-    cc.innerHTML = `<img src="${face.img}" alt="${face.nome}" style="width: 100%; height: auto;">`; // Adiciona a imagem
+    cc.innerHTML = `<img src="${face.img}" alt="${face.nome}" style="width: 100%; height: auto;">`;
+
+    // Verificar se a carta sorteada é rara e adicionar a classe "rara".
+    let cartaDiv = document.querySelector('.carta');
+    let raroIndicador = document.getElementById('raro-indicador');
+
+    if (raras.includes(face.nome)) {
+        cartaDiv.classList.add('rara'); // Adicionar borda dourada
+        raroIndicador.classList.remove('oculto'); // Exibir "Personagem RARO"
+    } else {
+        cartaDiv.classList.remove('rara'); // Remover borda dourada
+        raroIndicador.classList.add('oculto'); // Ocultar "Personagem RARO"
+    }
 
     // Remover textos dos cantos
-    document.getElementById('supEsq').innerText = ""; // Limpa o canto superior esquerdo
-    document.getElementById('infDir').innerText = ""; // Limpa o canto inferior direito
+    document.getElementById('supEsq').innerText = "";
+    document.getElementById('infDir').innerText = "";
 }
