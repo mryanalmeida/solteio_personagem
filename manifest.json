@@ -1,8 +1,8 @@
 {
-    "name": "",
+    "name": "Valorant - Aleatório",
     "start_url": "/",
     "display": "standalone",
-    "orientation": "portrait",
+    "orientation": "any",
     "icons": [
         {
             "src": "img/logo.png",

@@ -1,11 +1,11 @@
-/* style.css */
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -13,17 +13,23 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+    padding: 20px;
 }
 
+/* Container */
 .container {
     text-align: center;
+    max-width: 100%;
+    /* Garantir que a largura máxima não ultrapasse o container */
 }
 
 /* Texto "Personagem RARO" acima da carta */
 .raro-indicador {
     font-size: 1.5em;
-    color: gold;
+    color: yellow;
+    /* Mudança para cor amarela */
     font-weight: bold;
+    /* Negrito */
     margin-bottom: 10px;
 }
 
@@ -32,9 +38,12 @@ body {
     display: none;
 }
 
+/* Carta */
 .carta {
     width: 300px;
+    /* Largura padrão do retângulo */
     height: 400px;
+    /* Altura padrão do retângulo */
     background-color: white;
     border: 2px solid #000;
     border-radius: 10px;
@@ -43,17 +52,18 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-
+    /* Garantir que nada saia do retângulo */
     transition: all 0.3s ease;
-
+    /* Transição suave para os efeitos */
 }
 
 /* Estilo das cartas raras com borda dourada */
 .carta.rara {
     border: 5px solid gold;
-
+    /* Borda dourada para cartas raras */
 }
 
+/* Canto */
 .canto {
     position: absolute;
     font-size: 1.5em;
@@ -69,6 +79,7 @@ body {
     right: 10px;
 }
 
+/* Centro da imagem */
 .centro img {
     width: 100%;
     /* A imagem preenche todo o retângulo */
@@ -77,6 +88,7 @@ body {
     /* Cobre o retângulo sem distorcer a proporção */
 }
 
+/* Botão */
 button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -91,4 +103,40 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+
+    /* Ajustar a carta para telas menores */
+    .carta {
+        width: 200px;
+        height: 300px;
+    }
+
+    /* Reduzir o tamanho do texto "Personagem RARO" */
+    .raro-indicador {
+        font-size: 1.2em;
+    }
+
+    /* Ajustar tamanho do botão em telas menores */
+    button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /* Ajustar a carta para telas médias */
+    .carta {
+        width: 250px;
+        height: 350px;
+    }
+
+    /* Ajustar tamanho do botão em telas médias */
+    button {
+        font-size: 1.1em;
+        padding: 9px 18px;
+    }
 }
