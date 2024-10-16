@@ -2,7 +2,7 @@
  * Jogo Personagens!
  * @author Marcos Ryan
  * @version 1.0
- * @link https://github.com/emmanuel-lacerd4/uno
+ * @link
  */
 
 let faces = [
